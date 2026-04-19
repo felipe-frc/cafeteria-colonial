@@ -4,7 +4,7 @@ Aplicação web sofisticada para a Cafeteria Raízes, com design colonial mineir
 
 ## 🌐 Acesse o Projeto
 
-👉 https://cafeteria-colonial.manus.space
+👉 https://cafeteria-colonial-livid.vercel.app/
 
 ## 📌 Objetivo do Projeto
 
@@ -135,7 +135,7 @@ pnpm dev
 
 ## ⚠️ Observações
 
-- O mapa integrado depende da API do Google Maps (proxy automático no Manus)
+- O mapa integrado depende da API do Google Maps 
 - O vídeo de background está armazenado em CDN para otimização
 - Todas as imagens e mídia estão otimizadas para web
 - A aplicação é totalmente responsiva e funciona em todos os navegadores modernos
