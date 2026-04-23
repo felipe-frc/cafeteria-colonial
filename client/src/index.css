@@ -1,12 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "./custom.css";
 
 @custom-variant dark (&:is(.dark *));
-
-/* Design System: Luxo Minimalista Contemporâneo com Essência Colonial */
-/* Paleta: Preto profundo, Branco puro, Ouro polido, Marrom escuro */
-/* Tipografia: Playfair Display (display), Lato (body), Montserrat (UI) */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -48,11 +43,11 @@
 }
 
 :root {
-  /* Paleta Colonial Sofisticada - Tons de Café */
-  --primary: #6b4423; /* Marrom café profundo */
-  --primary-foreground: #f5e6d3;
-  --sidebar-primary: #6b4423;
-  --sidebar-primary-foreground: #f5e6d3;
+  /* Paleta Colonial Sofisticada - Essência do Café */
+  --primary: #5d3a1a; /* Marrom café profundo */
+  --primary-foreground: #f9f6f0;
+  --sidebar-primary: #5d3a1a;
+  --sidebar-primary-foreground: #f9f6f0;
   
   /* Cores de Gráfico */
   --chart-1: #8b6f47;
@@ -62,22 +57,22 @@
   --chart-5: #a89a8a;
   
   /* Espaçamento */
-  --radius: 0.5rem;
+  --radius: 0.75rem;
   
   /* Background e Foreground */
-  --background: #faf7f2; /* Creme muito claro */
-  --foreground: #3d1f10; /* Marrom muito escuro */
+  --background: #faf8f5; /* Creme muito claro */
+  --foreground: #2d1810; /* Marrom muito escuro */
   --card: #ffffff;
-  --card-foreground: #3d1f10;
+  --card-foreground: #2d1810;
   --popover: #ffffff;
-  --popover-foreground: #3d1f10;
+  --popover-foreground: #2d1810;
   
   /* Secundário */
   --secondary: #f5e6d3; /* Creme claro */
-  --secondary-foreground: #3d1f10;
+  --secondary-foreground: #2d1810;
   --muted: #d4c4b0;
   --muted-foreground: #6b4423;
-  --accent: #8b6f47; /* Marrom café médio */
+  --accent: #9b7653; /* Marrom café médio - mais sofisticado */
   --accent-foreground: #ffffff;
   
   /* Destrutivo */
@@ -87,51 +82,51 @@
   /* Borders e Inputs */
   --border: #e8dcc8;
   --input: #e8dcc8;
-  --ring: #8b6f47;
+  --ring: #9b7653;
   
   /* Sidebar */
   --sidebar: #ffffff;
-  --sidebar-foreground: #3d1f10;
-  --sidebar-accent: #8b6f47;
+  --sidebar-foreground: #2d1810;
+  --sidebar-accent: #9b7653;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #e8dcc8;
-  --sidebar-ring: #8b6f47;
+  --sidebar-ring: #9b7653;
 }
 
 .dark {
   /* Modo escuro: Marrom café como fundo */
-  --primary: #8b6f47;
-  --primary-foreground: #f5e6d3;
-  --sidebar-primary: #8b6f47;
-  --sidebar-primary-foreground: #f5e6d3;
+  --primary: #9b7653;
+  --primary-foreground: #f9f6f0;
+  --sidebar-primary: #9b7653;
+  --sidebar-primary-foreground: #f9f6f0;
   --background: #4d2e19; /* Marrom café escuro */
-  --foreground: #f5e6d3;
-  --card: #6b4423;
-  --card-foreground: #f5e6d3;
-  --popover: #6b4423;
-  --popover-foreground: #f5e6d3;
+  --foreground: #f9f6f0;
+  --card: #5d3a1a;
+  --card-foreground: #f9f6f0;
+  --popover: #5d3a1a;
+  --popover-foreground: #f9f6f0;
   --secondary: #6b4423;
-  --secondary-foreground: #f5e6d3;
+  --secondary-foreground: #f9f6f0;
   --muted: #7a5433;
   --muted-foreground: #d4c4b0;
-  --accent: #8b6f47;
-  --accent-foreground: #f5e6d3;
+  --accent: #9b7653;
+  --accent-foreground: #f9f6f0;
   --destructive: #ff8a65;
   --destructive-foreground: #3d1f10;
   --border: #7a5433;
   --input: #7a5433;
-  --ring: #8b6f47;
+  --ring: #9b7653;
   --chart-1: #8b6f47;
   --chart-2: #a89a8a;
   --chart-3: #6b4423;
   --chart-4: #4d2e19;
   --chart-5: #3d1f10;
-  --sidebar: #6b4423;
-  --sidebar-foreground: #f5e6d3;
-  --sidebar-accent: #8b6f47;
-  --sidebar-accent-foreground: #f5e6d3;
+  --sidebar: #5d3a1a;
+  --sidebar-foreground: #f9f6f0;
+  --sidebar-accent: #9b7653;
+  --sidebar-accent-foreground: #f9f6f0;
   --sidebar-border: #7a5433;
-  --sidebar-ring: #8b6f47;
+  --sidebar-ring: #9b7653;
 }
 
 @layer base {
@@ -185,24 +180,25 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -213,16 +209,163 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
+}
+
+/* Tipografia Customizada */
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-lato {
+  font-family: 'Lato', sans-serif;
+}
+
+/* Animações Sofisticadas */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scroll Smooth */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Efeito de Parallax Suave */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Scrollbar Customizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e8dcc8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9b7653;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5d3a1a;
+}
+
+/* Animações de Fade In */
+.animate-fade-in {
+  animation: fadeInDown 0.8s ease-out;
+}
+
+/* Links */
+a {
+  color: #9b7653;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #5d3a1a;
+}
+
+/* Focus States */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #9b7653;
+  outline-offset: 2px;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  font-family: 'Lato', sans-serif;
+  border-color: #e8dcc8;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #9b7653;
+  outline: none;
+}
+
+/* Transições Suaves */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Desabilitar transição para elementos com animação */
+.animate-fade {
+  transition: none;
 }

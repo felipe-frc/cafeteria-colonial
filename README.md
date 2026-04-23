@@ -22,7 +22,7 @@ Este projeto foi desenvolvido com o objetivo de praticar e demonstrar habilidade
 
 - 🏛️ Design Colonial Sofisticado - Paleta de cores inspirada em café (#8b6f47, #6b4423, #4d2e19)
 - 📹 Hero Section com Vídeo - Vídeo de preparo de café em background com overlay elegante
-- ☕ Cardápio Interativo - Menu com abas (Bebidas e Alimentos) com cards sofisticados
+- ☕ Cardápio Interativo - Menu com abas (Bebidas e Quitandas) com cards sofisticados
 - 📝 Sobre Nós em Cards - Seção com 3 cards elegantes descrevendo a essência da cafeteria
 - ⭐ Avaliações de Clientes - 6 depoimentos com estrelas em layout responsivo
 - 📍 Localização Integrada - Mapa interativo do Google Maps com informações de contato
@@ -97,15 +97,47 @@ A aplicação foi estruturada seguindo boas práticas modernas:
 
 ## 📸 Interface do Sistema
 
+### 📱 Infercace Completa
+
+<p align="center">
+  <img src="client/public/images/telas/interface.png" width="800">
+</p>
+ 
 ### 🏠 Página Inicial - Hero Section
+
+<p align="center">
+  <img src="client/public/images/telas/home.png" width="800">
+</p>
 
 ### ☕ Seção Sobre
 
-### 🍵 Cardápio Interativo
+<p align="center">
+  <img src="client/public/images/telas/sobre.png" width="800">
+</p>
+
+### 🍵 Menu - Bebidas
+
+<p align="center">
+  <img src="client/public/images/telas/menu-bebidas.png" width="800">
+</p>
+
+### 🍵 Menu - Quitandas
+
+<p align="center">
+  <img src="client/public/images/telas/menu-quitandas.png" width="800">
+</p>
 
 ### ⭐ Avaliações
 
+<p align="center">
+  <img src="client/public/images/telas/avaliacoes.png" width="800">
+</p>
+
 ### 📍 Localização
+
+<p align="center">
+  <img src="client/public/images/telas/nos-visite.png" width="800">
+</p>
 
 ## ▶️ Como Executar o Projeto
 

@@ -1,15 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Cafeteria Raízes - Sabor e Tradição</title>
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <meta
+      name="description"
+      content="Cafeteria Raízes - Sabor e Tradição desde 1985. Café colonial sofisticado com essência autêntica."
+    />
+    <meta name="theme-color" content="#9b7653" />
+    <title>Cafeteria Raízes - Sabor e Tradição Colonial</title>
+    <link rel="icon" type="image/png" href="/images/logo-cafeteria.png" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -17,5 +26,10 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script
+      defer
+      src="%VITE_ANALYTICS_ENDPOINT%/umami"
+      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"
+    ></script>
   </body>
 </html>
