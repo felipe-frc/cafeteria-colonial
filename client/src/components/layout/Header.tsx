@@ -18,7 +18,7 @@ export function Header({ cartItemsCount, onCartOpen }: HeaderProps) {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-stone-950/90 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6">
-        <nav className="flex items-center justify-between gap-4 py-4">
+        <nav aria-label="Navegacao principal" className="flex items-center justify-between gap-4 py-4">
           <a href="#inicio" className="flex items-center gap-3 transition-opacity hover:opacity-80">
             <img
               src="/images/logo-cafeteria.png"

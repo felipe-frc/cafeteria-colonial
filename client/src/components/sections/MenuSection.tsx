@@ -5,8 +5,8 @@ import { menuItems, type MenuCategory, type MenuItem } from "@/data/menu";
 import { SectionTitle } from "./SectionTitle";
 
 const categories: Array<{ value: MenuCategory; label: string }> = [
-  { value: "bebidas", label: "☕ Bebidas" },
-  { value: "quitandas", label: "🥐 Quitandas" },
+  { value: "bebidas", label: "Bebidas" },
+  { value: "quitandas", label: "Quitandas" },
 ];
 
 type MenuSectionProps = {
@@ -26,7 +26,7 @@ export function MenuSection({ onAddToCart, onCartOpen }: MenuSectionProps) {
     <section id="menu" className="relative overflow-hidden py-28">
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="mb-20">
-          <SectionTitle eyebrow="Seleção Especial" title="Nosso Menu" />
+          <SectionTitle eyebrow="Selecao Especial" title="Nosso Menu" />
 
           <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-white/65">
             Monte seu pedido com bebidas e quitandas artesanais e envie direto pelo WhatsApp
@@ -40,6 +40,7 @@ export function MenuSection({ onAddToCart, onCartOpen }: MenuSectionProps) {
               key={category.value}
               type="button"
               onClick={() => setActiveCategory(category.value)}
+              aria-pressed={activeCategory === category.value}
               className={`border-b-2 pb-4 text-sm font-light uppercase tracking-wider transition-all duration-300 ${
                 activeCategory === category.value
                   ? "border-amber-600 text-amber-600"
