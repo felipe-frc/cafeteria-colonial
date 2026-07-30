@@ -32,8 +32,8 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
     },
     {
       id: "cafe-com-leite",
-      title: "Cafe com Leite",
-      desc: "Combinacao perfeita",
+      title: "Café com Leite",
+      desc: "Combinação perfeita",
       price: "R$ 10,00",
       priceCents: 1000,
       image: "/images/menu/cafe-com-leite.png",
@@ -41,8 +41,8 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
     },
     {
       id: "macchiato-classico",
-      title: "Macchiato Classico",
-      desc: "Leve e marcante",
+      title: "Macchiato Clássico",
+      desc: "Espresso com espuma",
       price: "R$ 11,00",
       priceCents: 1100,
       image: "/images/menu/macchiato-classico.png",
@@ -50,8 +50,8 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
     },
     {
       id: "cafe-coado",
-      title: "Cafe Coado",
-      desc: "Metodo tradicional",
+      title: "Café Coado",
+      desc: "Método tradicional",
       price: "R$ 7,00",
       priceCents: 700,
       image: "/images/menu/cafe-coado.png",
@@ -59,8 +59,8 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
     },
     {
       id: "cafe-gelado",
-      title: "Cafe Gelado",
-      desc: "Refrescante e cremoso",
+      title: "Café Gelado",
+      desc: "Refrescante e sofisticado",
       price: "R$ 10,00",
       priceCents: 1000,
       image: "/images/menu/cafe-gelado.png",
@@ -70,7 +70,7 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
   quitandas: [
     {
       id: "pao-de-queijo",
-      title: "Pao de Queijo",
+      title: "Pão de Queijo",
       desc: "Quentinho artesanal",
       price: "R$ 6,00",
       priceCents: 600,

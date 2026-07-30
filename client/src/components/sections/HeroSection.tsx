@@ -3,56 +3,46 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section id="inicio" className="relative overflow-hidden bg-[#20120d] pt-24">
+    <section
+      id="inicio"
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden pt-32"
+    >
       <div className="absolute inset-0">
         <img
           src="/images/cafeteria-identidade.png"
-          alt="Painel da Cafeteria Raizes"
-          className="h-full w-full object-cover opacity-75"
+          alt="Identidade visual da Cafeteria Raízes"
+          className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(32,18,13,0.92)_0%,rgba(32,18,13,0.70)_33%,rgba(32,18,13,0.38)_65%,rgba(32,18,13,0.75)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/40 to-stone-900/80" />
       </div>
 
-      <div className="relative z-10 mx-auto grid min-h-[48rem] max-w-7xl items-center gap-12 px-6 py-12 lg:grid-cols-[0.92fr_1.08fr]">
-        <div className="max-w-xl rounded-[2rem] border border-white/8 bg-[rgba(47,27,18,0.52)] p-8 shadow-[0_20px_70px_rgba(0,0,0,0.35)] backdrop-blur-sm sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.38em] text-amber-500">
-            Cafeteria Raizes
+      <div className="relative z-10 mx-auto max-w-6xl px-6 text-center">
+        <div className="mx-auto max-w-3xl">
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.35em] text-amber-300">
+            Cafeteria Raízes
           </p>
-
-          <h1 className="mt-5 text-5xl font-black leading-[0.96] text-[#fff3e6] md:text-6xl">
-            Tradicao que
-            <br />
-            acolhe. Cafe que
-            <br />
-            <span className="text-amber-500">conecta.</span>
+          <h1 className="text-5xl font-black leading-tight text-white md:text-6xl lg:text-7xl">
+            Café especial, quitandas artesanais e um lugar para desacelerar.
           </h1>
-
-          <p className="mt-7 max-w-md text-base leading-8 text-[#ead7c4]">
-            Desde 1989, cultivamos a tradicao de servir cafes especiais com sabor,
-            historia e alma.
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/78 md:text-lg">
+            Uma experiência acolhedora para quem valoriza sabor, cuidado nos detalhes e um
+            ambiente memorável do primeiro gole ao último pedido.
           </p>
 
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="mt-8 h-12 rounded-full border-amber-700/70 bg-transparent px-7 text-xs font-semibold uppercase tracking-[0.18em] !text-[#f7eadf] hover:bg-amber-700/10 hover:!text-white"
-          >
-            <a href="#sobre">
-              Conheca nossa historia
-              <ArrowRight className="size-4" />
-            </a>
-          </Button>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button asChild size="lg" className="min-w-52 rounded-2xl px-8">
+              <a href="#menu">Explorar menu</a>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="min-w-52 rounded-2xl px-8">
+              <a href="#contato">Ver localização</a>
+            </Button>
+          </div>
         </div>
 
-        <div className="hidden lg:block" />
-      </div>
-
-      <div className="relative z-10 flex justify-center pb-7">
         <a
           href="#sobre"
-          aria-label="Ir para a proxima secao"
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-600 text-white shadow-[0_12px_25px_rgba(180,108,24,0.35)] transition-all duration-300 hover:bg-amber-500"
+          aria-label="Ir para a próxima seção"
+          className="absolute left-1/2 top-[calc(100%+2rem)] flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full bg-amber-700 text-white shadow-2xl transition-all duration-300 animate-bounce hover:bg-amber-800"
         >
           <ArrowRight className="h-6 w-6 rotate-90 text-white" />
         </a>

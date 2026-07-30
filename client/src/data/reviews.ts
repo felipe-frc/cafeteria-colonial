@@ -7,32 +7,32 @@ type Review = {
 export const reviews: Review[] = [
   {
     name: "Maria Silva",
-    text: "Um lugar aconchegante onde o tempo desacelera. O cafe e excelente e o atendimento e perfeito.",
+    text: "Um lugar aconchegante onde o tempo desacelera. O café é excelente e a atmosfera é perfeita.",
     rating: 5,
   },
   {
     name: "Pedro Santos",
-    text: "Melhor cafe que ja provei. A qualidade dos graos e do preparo faz toda a diferenca.",
+    text: "Melhor café que já provei. A qualidade dos grãos e do preparo faz toda a diferença.",
     rating: 5,
   },
   {
     name: "Ana Costa",
-    text: "Ambiente incrivel para trabalhar ou conversar. O atendimento e os sabores desta cafeteria sao impecaveis.",
+    text: "Ambiente ótimo para trabalhar ou conversar. O atendimento é atencioso e o café sempre chega impecável.",
     rating: 5,
   },
   {
     name: "Rodrigo Oliveira",
-    text: "Cada detalhe reflete cuidado, tradicao e bom gosto. Sempre volto pela experiencia completa.",
+    text: "Desde a primeira visita me apaixonei. Cada detalhe reflete cuidado, tradição e bom gosto.",
     rating: 5,
   },
   {
     name: "Juliana Ferreira",
-    text: "Uma cafeteria linda e consistente. Voltei varias vezes e a qualidade continua alta.",
+    text: "Uma cafeteria linda e muito consistente. Voltei várias vezes e a qualidade continua alta.",
     rating: 5,
   },
   {
     name: "Felipe Alves",
-    text: "A Cafeteria Raizes e um refugio de paz e sabor. Excelente experiencia do comeco ao fim.",
+    text: "A Cafeteria Raízes é um refúgio de paz e sabor. Excelente experiência do começo ao fim.",
     rating: 5,
   },
 ];

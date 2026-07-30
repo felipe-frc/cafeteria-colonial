@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const navigationItems = [
   { label: "Sobre", href: "#sobre" },
   { label: "Menu", href: "#menu" },
-  { label: "Avaliações", href: "#avaliacoes" },
+  { label: "Avaliacoes", href: "#avaliacoes" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -16,12 +16,9 @@ type HeaderProps = {
 
 export function Header({ cartItemsCount, onCartOpen }: HeaderProps) {
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#20120d]/90 backdrop-blur-xl">
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-stone-950/90 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6">
-        <nav
-          aria-label="Navegação principal"
-          className="flex items-center justify-between gap-4 py-4"
-        >
+        <nav aria-label="Navegacao principal" className="flex items-center justify-between gap-4 py-4">
           <a href="#inicio" className="flex items-center gap-3 transition-opacity hover:opacity-80">
             <img
               src="/images/logo-cafeteria.png"
@@ -35,7 +32,7 @@ export function Header({ cartItemsCount, onCartOpen }: HeaderProps) {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium uppercase tracking-[0.14em] text-white/72 transition-colors hover:text-white"
+                className="text-sm font-light uppercase tracking-wider text-white/70 transition-colors hover:text-white"
               >
                 {item.label}
               </a>
@@ -70,12 +67,12 @@ export function Header({ cartItemsCount, onCartOpen }: HeaderProps) {
           </div>
         </nav>
 
-        <nav aria-label="Navegação rápida" className="flex gap-3 overflow-x-auto pb-4 md:hidden">
+        <nav aria-label="Navegacao rapida" className="flex gap-3 overflow-x-auto pb-4 md:hidden">
           {navigationItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/82 transition-colors hover:bg-white/10 hover:text-white"
+              className="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80 transition-colors hover:bg-white/10 hover:text-white"
             >
               {item.label}
             </a>
