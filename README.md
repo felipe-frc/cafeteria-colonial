@@ -90,6 +90,7 @@ Aplicação disponível em `http://localhost:3000`.
 ### Qualidade
 
 ```bash
+npm run lint
 npm run check
 npm run test
 npm run build
@@ -100,6 +101,7 @@ npm run build
 O repositório possui:
 
 - testes unitários e de comportamento com Vitest
+- lint com ESLint
 - validação de TypeScript
 - build de produção
 - pipeline de CI no GitHub Actions
@@ -112,10 +114,10 @@ O repositório possui:
 
 ## Próximos passos
 
-- adicionar lint com ESLint
-- melhorar observabilidade de erros
-- evoluir regras de validação do pedido
+- adicionar testes end-to-end para o fluxo de pedido
 - expandir testes de acessibilidade e interação
+- medir performance com Lighthouse e documentar resultados
+- evoluir o conteúdo visual com screenshots e GIF do fluxo principal
 
 ## Licença
 

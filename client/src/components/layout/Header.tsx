@@ -1,10 +1,11 @@
 import { ShoppingBag } from "lucide-react";
+import { contactInfo } from "@/data/contact";
 import { Button } from "@/components/ui/button";
 
 const navigationItems = [
   { label: "Sobre", href: "#sobre" },
   { label: "Menu", href: "#menu" },
-  { label: "Avaliações", href: "#avaliacoes" },
+  { label: "Avaliacoes", href: "#avaliacoes" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -21,7 +22,7 @@ export function Header({ cartItemsCount, onCartOpen }: HeaderProps) {
           <a href="#inicio" className="flex items-center gap-3 transition-opacity hover:opacity-80">
             <img
               src="/images/logo-cafeteria.png"
-              alt="Cafeteria Raízes"
+              alt={contactInfo.businessName}
               className="h-12 object-contain"
             />
           </a>
@@ -66,7 +67,7 @@ export function Header({ cartItemsCount, onCartOpen }: HeaderProps) {
           </div>
         </nav>
 
-        <nav aria-label="Navegação rápida" className="flex gap-3 overflow-x-auto pb-4 md:hidden">
+        <nav aria-label="Navegacao rapida" className="flex gap-3 overflow-x-auto pb-4 md:hidden">
           {navigationItems.map((item) => (
             <a
               key={item.href}

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { contactInfo } from "@/data/contact";
 import { AlertTriangle, RotateCcw } from "lucide-react";
 import { Component, type ErrorInfo, type ReactNode } from "react";
 
@@ -24,7 +25,7 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("Unexpected render error in Cafeteria Raízes:", error, errorInfo);
+    console.error(`Unexpected render error in ${contactInfo.businessName}:`, error, errorInfo);
   }
 
   render() {
@@ -37,7 +38,7 @@ class ErrorBoundary extends Component<Props, State> {
             <h2 className="mb-4 text-center text-xl">Algo saiu do esperado por aqui.</h2>
 
             <p className="mb-6 max-w-xl text-center text-sm text-muted-foreground">
-              Recarregue a página para tentar novamente. Se o problema continuar, revise o
+              Recarregue a pagina para tentar novamente. Se o problema continuar, revise o
               console e o fluxo que estava em uso.
             </p>
 
@@ -58,7 +59,7 @@ class ErrorBoundary extends Component<Props, State> {
               )}
             >
               <RotateCcw size={16} />
-              Recarregar página
+              Recarregar pagina
             </button>
           </div>
         </div>
