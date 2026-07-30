@@ -196,7 +196,7 @@ html {
   background-image:
     radial-gradient(circle at 18% 10%, rgba(180, 108, 24, 0.14), transparent 28rem),
     radial-gradient(circle at 82% 42%, rgba(180, 108, 24, 0.1), transparent 30rem),
-    linear-gradient(180deg, rgba(33, 31, 27, 0.88), rgba(24, 22, 20, 0.91)),
+    linear-gradient(180deg, rgba(40, 24, 18, 0.91), rgba(30, 18, 13, 0.94)),
     url("/images/background-home.webp");
   background-position: center top, center center, center center, center top;
   background-repeat: no-repeat, no-repeat, no-repeat, repeat;
@@ -209,8 +209,8 @@ html {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.22), transparent 25%, transparent 75%, rgba(0, 0, 0, 0.22)),
-    rgba(0, 0, 0, 0.16);
+    linear-gradient(90deg, rgba(29, 17, 12, 0.25), transparent 25%, transparent 75%, rgba(29, 17, 12, 0.25)),
+    rgba(24, 14, 10, 0.2);
   pointer-events: none;
 }
 

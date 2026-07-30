@@ -99,7 +99,7 @@ export function CartDrawer({
   return (
     <>
       <div
-        className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-100"
+        className="fixed inset-0 z-[60] bg-[#1b100c]/60 backdrop-blur-sm transition-opacity duration-300 opacity-100"
         aria-hidden="true"
         onClick={onClose}
       />
@@ -110,7 +110,7 @@ export function CartDrawer({
         aria-modal="true"
         aria-labelledby={titleId}
         tabIndex={-1}
-        className="fixed bottom-0 right-0 top-0 z-[70] flex w-full max-w-md translate-x-0 flex-col border-l border-amber-700/20 bg-stone-950 shadow-2xl shadow-black/40 transition-transform duration-300 sm:rounded-l-3xl"
+        className="fixed bottom-0 right-0 top-0 z-[70] flex w-full max-w-md translate-x-0 flex-col border-l border-amber-700/20 bg-[#20120d] shadow-2xl shadow-black/40 transition-transform duration-300 sm:rounded-l-3xl"
       >
         <header className="flex items-center justify-between border-b border-white/10 px-6 py-5">
           <div>
@@ -177,7 +177,7 @@ export function CartDrawer({
                       </div>
 
                       <div className="mt-4 flex items-center justify-between gap-3">
-                        <div className="flex items-center rounded-full border border-white/10 bg-black/20 p-1">
+                        <div className="flex items-center rounded-full border border-white/10 bg-[#281811]/70 p-1">
                           <button
                             type="button"
                             onClick={() => onDecrease(item.id)}
@@ -211,7 +211,7 @@ export function CartDrawer({
           )}
         </div>
 
-        <footer className="border-t border-white/10 bg-stone-950 px-6 py-5">
+        <footer className="border-t border-white/10 bg-[#20120d] px-6 py-5">
           <div className="mb-4 flex items-center justify-between text-white">
             <span className="text-sm uppercase tracking-[0.25em] text-white/50">Total</span>
             <strong aria-live="polite" className="text-2xl text-amber-500">

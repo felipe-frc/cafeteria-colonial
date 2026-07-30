@@ -11,7 +11,7 @@ export function createWhatsappOrderUrl(items: CartItem[], totalPrice: number) {
     .join("\n");
 
   const message = [
-    `Olá! Gostaria de fazer um pedido na ${contactInfo.businessName}.`,
+    `Ola! Gostaria de fazer um pedido na ${contactInfo.businessName}.`,
     "",
     "Itens do pedido:",
     orderItems,
@@ -20,8 +20,8 @@ export function createWhatsappOrderUrl(items: CartItem[], totalPrice: number) {
     `Tipo de pedido: ${contactInfo.orderType}`,
     "",
     "Nome:",
-    "Horário de retirada:",
-    "Observações:",
+    "Horario de retirada:",
+    "Observacoes:",
   ].join("\n");
 
   return `https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent(message)}`;

@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Plus } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { menuItems, type MenuCategory, type MenuItem } from "@/data/menu";
 import { SectionTitle } from "./SectionTitle";
 
 const categories: Array<{ value: MenuCategory; label: string }> = [
-  { value: "bebidas", label: "Bebidas" },
-  { value: "quitandas", label: "Quitandas" },
+  { value: "bebidas", label: "Todos" },
+  { value: "quitandas", label: "Classicos" },
 ];
 
 type MenuSectionProps = {
@@ -23,88 +23,95 @@ export function MenuSection({ onAddToCart, onCartOpen }: MenuSectionProps) {
   }
 
   return (
-    <section id="menu" className="relative overflow-hidden py-28">
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="mb-20">
-          <SectionTitle eyebrow="Selecao Especial" title="Nosso Menu" />
+    <section
+      id="menu"
+      className="relative overflow-hidden bg-[linear-gradient(180deg,#fbf6ee_0%,#f7eee1_100%)] py-28 text-[#2d1810]"
+    >
+      <div className="absolute inset-0 opacity-25">
+        <div className="absolute left-0 top-24 h-64 w-64 bg-[url('/images/background-home.webp')] bg-contain bg-no-repeat opacity-[0.10]" />
+        <div className="absolute right-0 top-16 h-64 w-64 scale-x-[-1] bg-[url('/images/background-home.webp')] bg-contain bg-no-repeat opacity-[0.10]" />
+      </div>
 
-          <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-white/65">
-            Monte seu pedido com bebidas e quitandas artesanais e envie direto pelo WhatsApp
-            para retirada no local.
-          </p>
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        <div className="mb-16">
+          <SectionTitle eyebrow="Selecao Especial" title="Nosso Menu" tone="light" />
         </div>
 
-        <div className="mb-20 flex flex-wrap justify-center gap-8">
+        <div className="mb-14 flex flex-wrap justify-center gap-4">
           {categories.map((category) => (
             <button
               key={category.value}
               type="button"
               onClick={() => setActiveCategory(category.value)}
               aria-pressed={activeCategory === category.value}
-              className={`border-b-2 pb-4 text-sm font-light uppercase tracking-wider transition-all duration-300 ${
+              className={`rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300 ${
                 activeCategory === category.value
-                  ? "border-amber-600 text-amber-600"
-                  : "border-transparent text-white/50 hover:text-white/80"
+                  ? "bg-amber-700 text-white shadow-lg shadow-amber-700/15"
+                  : "text-[#7c624d] hover:text-[#2d1810]"
               }`}
             >
               {category.label}
             </button>
           ))}
+          <button type="button" className="rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#7c624d] hover:text-[#2d1810]">
+            Especiais
+          </button>
+          <button type="button" className="rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#7c624d] hover:text-[#2d1810]">
+            Gelados
+          </button>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
           {menuItems[activeCategory].map((item) => (
             <article
               key={item.id}
-              className="group flex min-h-[430px] flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-2xl shadow-black/10 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 hover:bg-white/[0.07]"
+              className="group flex min-h-[25rem] flex-col overflow-hidden rounded-[1.75rem] border border-[#e3d5c6] bg-[#fffdf9] p-4 shadow-[0_24px_60px_rgba(77,46,25,0.08)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(77,46,25,0.12)]"
             >
-              <div className="relative h-48 overflow-hidden rounded-2xl shadow-2xl">
+              <div className="relative h-48 overflow-hidden rounded-[1.25rem]">
                 <img
                   src={item.image}
                   alt={item.title}
                   width="480"
                   height="320"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-
-                <div className="absolute inset-0 bg-black/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                <div className="absolute inset-0 flex items-center justify-center px-6 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <span className="text-sm font-light uppercase tracking-[0.25em] text-white">
-                    Adicionar ao pedido
-                  </span>
-                </div>
               </div>
 
-              <div className="flex flex-1 flex-col px-1 pb-1 pt-8">
-                <div>
-                  <h3 className="mb-3 text-2xl font-bold leading-tight text-white transition-colors group-hover:text-amber-600">
-                    {item.title}
-                  </h3>
+              <div className="flex flex-1 flex-col px-2 pb-2 pt-6">
+                <h3 className="text-2xl font-black text-[#2d1810]">{item.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-[#7a604e]">{item.desc}</p>
 
-                  <p className="text-base font-light leading-relaxed text-white/70">
-                    {item.desc}
-                  </p>
-                </div>
+                <div className="mt-auto flex items-center justify-between pt-7">
+                  <div>
+                    <p className="text-3xl font-black leading-none text-amber-600">{item.price}</p>
+                  </div>
 
-                <div className="mt-auto flex items-center justify-between gap-5 pt-10">
-                  <p className="shrink-0 text-2xl font-bold leading-none text-amber-600">
-                    {item.price}
-                  </p>
-
-                  <Button
+                  <button
                     type="button"
-                    size="sm"
                     onClick={() => handleAddItem(item)}
-                    className="min-w-[140px] rounded-2xl px-5 py-5 text-sm font-semibold"
+                    aria-label={`Adicionar ${item.title}`}
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-600 text-white shadow-lg shadow-amber-600/20 transition-all duration-300 hover:bg-amber-700"
                   >
                     <Plus className="size-4" />
-                    Adicionar
-                  </Button>
+                  </button>
                 </div>
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-14 flex justify-center">
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="h-12 rounded-full border-amber-700/30 px-8 text-xs font-semibold uppercase tracking-[0.18em] !text-[#6a4a33] hover:bg-[#f4e3d1] hover:!text-[#2d1810]"
+          >
+            <a href="#contato">
+              Ver cardapio completo
+              <ArrowRight className="size-4" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>

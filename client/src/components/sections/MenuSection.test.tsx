@@ -17,18 +17,18 @@ describe("MenuSection", () => {
 
     render(<MenuSection onAddToCart={vi.fn()} onCartOpen={vi.fn()} />);
 
-    const drinksButton = screen.getByRole("button", { name: /bebidas/i });
-    const snacksButton = screen.getByRole("button", { name: /quitandas/i });
+    const allButton = screen.getByRole("button", { name: /todos/i });
+    const classicsButton = screen.getByRole("button", { name: /classicos/i });
 
-    expect(drinksButton).toHaveAttribute("aria-pressed", "true");
-    expect(snacksButton).toHaveAttribute("aria-pressed", "false");
+    expect(allButton).toHaveAttribute("aria-pressed", "true");
+    expect(classicsButton).toHaveAttribute("aria-pressed", "false");
 
-    await user.click(snacksButton);
+    await user.click(classicsButton);
 
-    expect(screen.getByText(/P.o de Queijo/i)).toBeInTheDocument();
+    expect(screen.getByText(/Pao de Queijo/i)).toBeInTheDocument();
     expect(screen.getByText(/Bolo de Milho/i)).toBeInTheDocument();
-    expect(drinksButton).toHaveAttribute("aria-pressed", "false");
-    expect(snacksButton).toHaveAttribute("aria-pressed", "true");
+    expect(allButton).toHaveAttribute("aria-pressed", "false");
+    expect(classicsButton).toHaveAttribute("aria-pressed", "true");
   });
 
   it("adiciona produto ao carrinho e abre o carrinho", async () => {

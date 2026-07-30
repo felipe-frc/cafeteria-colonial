@@ -31,18 +31,15 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-stone-950 text-white">
+    <div className="min-h-screen overflow-x-hidden bg-[#20120d] text-white">
       <Header cartItemsCount={totalItems} onCartOpen={openCart} />
 
       <main>
         <HeroSection />
-
-        <div className="site-textured-background">
-          <AboutSection />
-          <MenuSection onAddToCart={addItem} onCartOpen={openCart} />
-          <ReviewsSection />
-          <ContactSection />
-        </div>
+        <AboutSection />
+        <MenuSection onAddToCart={addItem} onCartOpen={openCart} />
+        <ReviewsSection />
+        <ContactSection />
       </main>
 
       <Footer />
