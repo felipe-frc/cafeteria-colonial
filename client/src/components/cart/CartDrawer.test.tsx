@@ -5,6 +5,24 @@ import { menuItems } from "@/data/menu";
 import { CartDrawer } from "./CartDrawer";
 
 describe("CartDrawer", () => {
+  it("não renderiza o drawer quando fechado", () => {
+    render(
+      <CartDrawer
+        isOpen={false}
+        items={[{ ...menuItems.bebidas[0], quantity: 1 }]}
+        totalPrice={menuItems.bebidas[0].priceCents}
+        onClose={vi.fn()}
+        onIncrease={vi.fn()}
+        onDecrease={vi.fn()}
+        onRemove={vi.fn()}
+        onClear={vi.fn()}
+      />
+    );
+
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /fechar carrinho/i })).not.toBeInTheDocument();
+  });
+
   it("fecha ao pressionar Escape", async () => {
     const user = userEvent.setup();
     const onClose = vi.fn();

@@ -92,12 +92,14 @@ export function CartDrawer({
     };
   }, [isOpen, onClose]);
 
+  if (!isOpen) {
+    return null;
+  }
+
   return (
     <>
       <div
-        className={`fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${
-          isOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
+        className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-100"
         aria-hidden="true"
         onClick={onClose}
       />
@@ -108,10 +110,7 @@ export function CartDrawer({
         aria-modal="true"
         aria-labelledby={titleId}
         tabIndex={-1}
-        className={`fixed bottom-0 right-0 top-0 z-[70] flex w-full max-w-md flex-col border-l border-amber-700/20 bg-stone-950 shadow-2xl shadow-black/40 transition-transform duration-300 sm:rounded-l-3xl ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        aria-hidden={!isOpen}
+        className="fixed bottom-0 right-0 top-0 z-[70] flex w-full max-w-md translate-x-0 flex-col border-l border-amber-700/20 bg-stone-950 shadow-2xl shadow-black/40 transition-transform duration-300 sm:rounded-l-3xl"
       >
         <header className="flex items-center justify-between border-b border-white/10 px-6 py-5">
           <div>
