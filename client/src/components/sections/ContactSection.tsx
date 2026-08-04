@@ -1,18 +1,22 @@
 import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { contactInfo } from "@/data/contact";
-import { Button } from "@/components/ui/button";
 import { SectionTitle } from "./SectionTitle";
 
-const mapLocationUrl = "https://maps.google.com/?q=Patrocínio%20MG";
+const mapLocationUrl = "https://maps.google.com/?q=Patroc%C3%ADnio%20MG";
 const embeddedMapUrl =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d552737.0817473176!2d-47.094663697587215!3d-19.00589641062706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94afba88e5ce6e53%3A0x6131553223c88567!2sPatroc%C3%ADnio%20-%20MG%2C%2038740-000!5e0!3m2!1spt-BR!2sbr!4v1776968163894!5m2!1spt-BR!2sbr";
+  "https://maps.google.com/maps?q=Patroc%C3%ADnio%20MG&z=13&ie=UTF8&iwloc=&output=embed";
 
-const contactItems = [
+const details = [
   {
     icon: MapPin,
     label: "Endereço",
-    value: "Rua das Flores, 123 - Centro, Patrocínio - MG",
+    value: "Rua das Flores, 123 — Centro, Patrocínio — MG",
     href: mapLocationUrl,
+  },
+  {
+    icon: Clock,
+    label: "Funcionamento",
+    value: "Seg–Sex 7h–19h · Sáb 8h–18h · Dom 9h–17h",
   },
   {
     icon: Phone,
@@ -22,90 +26,69 @@ const contactItems = [
   },
   {
     icon: Mail,
-    label: "Email",
+    label: "E-mail",
     value: "contato@cafeteriaraizes.com.br",
     href: "mailto:contato@cafeteriaraizes.com.br",
   },
-  {
-    icon: Clock,
-    label: "Horários",
-    value: "Seg-Sex: 7h-19h | Sab: 8h-18h | Dom: 9h-17h",
-  },
 ];
-
-const whatsappHref = `https://wa.me/${contactInfo.whatsappNumber}`;
 
 export function ContactSection() {
   return (
-    <section id="contato" className="relative overflow-hidden py-28">
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="mb-20">
-          <SectionTitle eyebrow="Visite-nos" title="Nos Encontre" />
-        </div>
+    <section id="contato" className="botanical-section section-space scroll-mt-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="grid gap-8 lg:grid-cols-[.92fr_1.08fr]">
+          <div className="rounded-[2.2rem] border border-[rgb(var(--brown-rgb)/0.14)] bg-[rgb(var(--cream-rgb)/0.82)] p-8 shadow-[0_28px_70px_rgb(var(--brown-rgb)/0.12)] backdrop-blur sm:p-10 lg:p-12">
+            <SectionTitle
+              eyebrow="Venha nos visitar"
+              title="Nos Encontre"
+              centered={false}
+            />
 
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
-          <div className="space-y-8">
-            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 shadow-2xl shadow-black/10">
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-amber-500">
-                Atendimento
-              </p>
-              <h3 className="mt-4 text-3xl font-bold text-white">
-                Faça seu pedido e fale com a cafeteria sem sair da página.
-              </h3>
-              <p className="mt-4 text-base leading-relaxed text-white/70">
-                Entre em contato para tirar dúvidas, combinar retirada e conhecer melhor o menu
-                artesanal da Cafeteria Raízes.
-              </p>
+            <p className="mt-6 max-w-md text-base leading-7 text-[rgb(var(--brown-rgb))]">
+              Entre, sente-se e deixe o café fazer o resto. Passe para um café,
+              retire seu pedido ou fale com a nossa equipe com calma e sabor.
+            </p>
 
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <Button asChild className="rounded-2xl px-6">
-                  <a href={whatsappHref} target="_blank" rel="noreferrer">
-                    <MessageCircle className="size-4" />
-                    Chamar no WhatsApp
-                  </a>
-                </Button>
-                <Button asChild variant="outline" className="rounded-2xl px-6">
-                  <a href={mapLocationUrl} target="_blank" rel="noreferrer">
-                    <MapPin className="size-4" />
-                    Abrir no mapa
-                  </a>
-                </Button>
-              </div>
-            </div>
-
-            <div className="space-y-5">
-              {contactItems.map((item) => (
-                <div
-                  key={item.label}
-                  className="group flex gap-6 rounded-2xl border border-white/8 bg-white/[0.03] p-5"
-                >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-amber-600/20 transition-all group-hover:bg-amber-600/40">
-                    <item.icon className="h-6 w-6 text-amber-600" />
-                  </div>
+            <div className="mt-9 grid gap-5">
+              {details.map(({ icon: Icon, label, value, href }) => (
+                <div key={label} className="flex gap-4 rounded-[1.3rem] border border-[rgb(var(--brown-rgb)/0.12)] bg-[rgb(var(--cream-rgb)/0.6)] p-4">
+                  <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[rgb(var(--green-rgb)/0.1)]">
+                    <Icon className="size-5 text-[rgb(var(--green-rgb))]" />
+                  </span>
 
                   <div>
-                    <p className="mb-1 text-sm font-light uppercase tracking-wider text-white/60">
-                      {item.label}
-                    </p>
-                    {item.href ? (
+                    <span className="block text-[10px] font-bold uppercase tracking-[.18em] text-[rgb(var(--terracotta-rgb)/0.72)]">
+                      {label}
+                    </span>
+                    {href ? (
                       <a
-                        href={item.href}
-                        target={item.href.startsWith("http") ? "_blank" : undefined}
-                        rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                        className="text-lg font-light text-white transition-colors hover:text-amber-400"
+                        href={href}
+                        target={href.startsWith("http") ? "_blank" : undefined}
+                        rel={href.startsWith("http") ? "noreferrer" : undefined}
+                        className="mt-1 block text-sm leading-6 !text-[rgb(var(--brown-rgb))] hover:!text-[rgb(var(--terracotta-rgb))]"
                       >
-                        {item.value}
+                        {value}
                       </a>
                     ) : (
-                      <p className="text-lg font-light text-white">{item.value}</p>
+                      <p className="mt-1 text-sm leading-6 text-[rgb(var(--brown-rgb))]">{value}</p>
                     )}
                   </div>
                 </div>
               ))}
             </div>
+
+            <a
+              href={`https://wa.me/${contactInfo.whatsappNumber}`}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-10 inline-flex h-13 items-center justify-center gap-3 rounded-full bg-[rgb(var(--green-rgb))] px-7 text-xs font-bold uppercase tracking-[.14em] !text-white transition hover:bg-[rgb(var(--terracotta-rgb))]"
+            >
+              <MessageCircle className="size-4" /> Falar pelo WhatsApp
+            </a>
           </div>
 
-          <div className="h-96 overflow-hidden rounded-2xl shadow-2xl">
+          <div className="relative overflow-hidden rounded-[2.2rem] border border-[rgb(var(--brown-rgb)/0.18)] bg-[rgb(var(--cream-rgb)/0.56)] shadow-[0_28px_70px_rgb(var(--brown-rgb)/0.12)]">
+            <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(247,239,226,0.04),rgba(39,67,56,0.08))]" />
             <iframe
               src={embeddedMapUrl}
               width="100%"
@@ -114,8 +97,8 @@ export function ContactSection() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Mapa de Patrocínio MG"
-              className="h-full w-full"
+              title="Mapa da Cafeteria Raízes em Patrocínio, MG"
+              className="h-full min-h-[460px] w-full [filter:sepia(16%)_saturate(72%)_hue-rotate(-8deg)_brightness(1.02)_contrast(.92)]"
             />
           </div>
         </div>

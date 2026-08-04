@@ -1,56 +1,83 @@
-import { Coffee } from "lucide-react";
+import { Coffee, Heart, Leaf } from "lucide-react";
 import { SectionTitle } from "./SectionTitle";
 
-const stats = [
-  { value: "40+", label: "Anos de Tradição" },
-  { value: "1000+", label: "Clientes Felizes" },
-  { value: "100%", label: "Qualidade Premium" },
+const values = [
+  {
+    icon: Coffee,
+    title: "Qualidade",
+    text: "Café bem escolhido e preparo cuidadoso.",
+  },
+  {
+    icon: Leaf,
+    title: "Artesanal",
+    text: "Receitas frescas feitas com atenção diária.",
+  },
+  {
+    icon: Heart,
+    title: "Acolhimento",
+    text: "Um lugar leve para ficar e voltar.",
+  },
 ];
 
 export function AboutSection() {
   return (
-    <section id="sobre" className="relative overflow-hidden py-28">
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 items-center gap-20 lg:grid-cols-2">
-          <div className="relative order-2 lg:order-1">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="h-96 w-full rounded-2xl object-cover shadow-2xl"
-            >
-              <source src="/video/video-fundo.mp4" type="video/mp4" />
-              Seu navegador não suporta vídeo.
-            </video>
+    <section id="sobre" className="botanical-section section-space scroll-mt-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="grid items-start gap-14 lg:grid-cols-[1.02fr_.98fr] lg:gap-24">
+          <div className="relative">
+            <div className="overflow-hidden rounded-[2.25rem] border border-[rgb(var(--gold-rgb)/0.55)] bg-[rgb(var(--cream-rgb)/0.55)] p-3 shadow-[0_28px_70px_rgb(var(--brown-rgb)/0.1)] backdrop-blur-sm">
+              <video
+                src="/video/video-sessão.mp4"
+                className="aspect-[4/4.45] w-full rounded-[1.8rem] object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                Seu navegador não suporta reprodução de vídeo.
+              </video>
+            </div>
 
-            <div className="floating-cup absolute -bottom-6 -right-6">
-              <div className="flex h-24 w-24 items-center justify-center rounded-full border-4 border-amber-600 bg-amber-700 shadow-2xl">
-                <Coffee className="h-12 w-12 text-white" />
-              </div>
+            <div className="absolute bottom-5 right-5 max-w-[16rem] rounded-[1.5rem] border border-[rgb(var(--brown-rgb)/0.18)] bg-[rgb(var(--cream-rgb)/0.92)] px-5 py-4 shadow-[0_18px_40px_rgb(var(--brown-rgb)/0.14)] backdrop-blur-sm">
+              <span className="block text-[11px] font-bold uppercase tracking-[0.22em] text-[rgb(var(--terracotta-rgb))]">
+                Raízes da casa
+              </span>
+              <strong className="mt-2 block font-serif text-2xl leading-tight text-[rgb(var(--green-rgb))]">
+                Sabor e tradição desde 1989
+              </strong>
             </div>
           </div>
 
-          <div className="order-1 lg:order-2">
-            <SectionTitle eyebrow="Nossa Essência" title="Tradição Reimaginada" centered={false} />
+          <div>
+            <SectionTitle
+              eyebrow="Nossa essência"
+              title="Tradição mineira com beleza, aconchego e sabor"
+              centered={false}
+            />
 
-            <div className="mt-8 space-y-6 text-lg font-light leading-relaxed text-white/85">
-              <p>
-                A Cafeteria Raízes não é apenas um lugar. É um espaço pensado para acolher,
-                inspirar e transformar cada pausa em uma experiência especial.
-              </p>
-              <p>
-                Desde 1989, cultivamos excelência em cada grão, em cada receita e em cada
-                momento compartilhado. Nossa missão é servir sabor, tradição e aconchego.
-              </p>
-            </div>
+            <p className="mt-7 text-lg leading-8 text-[rgb(var(--brown-rgb))]">
+              A Cafeteria Raízes nasceu do desejo de transformar o café em encontro.
+              Desde 1989, reunimos receitas afetivas, preparo cuidadoso e uma atmosfera
+              que convida a ficar mais um pouco.
+            </p>
 
-            <div className="mt-12 flex flex-wrap gap-8">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <p className="mb-2 text-4xl font-bold text-amber-600">{stat.value}</p>
-                  <p className="font-light text-white/70">{stat.label}</p>
-                </div>
+            <p className="mt-4 text-lg leading-8 text-[rgb(var(--brown-rgb))]">
+              Aqui, o terracota aquece, o verde acalma e cada detalhe faz o espaço
+              parecer vivo, acolhedor e cheio de sabor.
+            </p>
+
+            <div className="mt-10 grid gap-3 sm:grid-cols-3">
+              {values.map(({ icon: Icon, title, text }) => (
+                <article
+                  key={title}
+                  className="rounded-[1.35rem] border border-[rgb(var(--brown-rgb)/0.12)] bg-[rgb(var(--cream-rgb)/0.62)] p-4 shadow-[0_12px_28px_rgb(var(--brown-rgb)/0.06)] backdrop-blur-sm transition hover:-translate-y-1 hover:bg-[rgb(var(--cream-rgb)/0.76)]"
+                >
+                  <span className="flex size-10 items-center justify-center rounded-full bg-[rgb(var(--terracotta-rgb)/0.1)] text-[rgb(var(--terracotta-rgb))]">
+                    <Icon className="size-4" />
+                  </span>
+                  <h3 className="mt-3 text-[15px] font-semibold text-[rgb(var(--green-rgb))]">{title}</h3>
+                  <p className="mt-1.5 text-sm leading-5 text-[rgb(var(--brown-rgb))]">{text}</p>
+                </article>
               ))}
             </div>
           </div>
