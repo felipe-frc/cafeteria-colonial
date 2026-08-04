@@ -1,132 +1,31 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
-  --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
-  /* Paleta Colonial Sofisticada - Essência do Café */
-  --primary: #5d3a1a; /* Marrom café profundo */
-  --primary-foreground: #f9f6f0;
-  --sidebar-primary: #5d3a1a;
-  --sidebar-primary-foreground: #f9f6f0;
-
-  /* Cores de Gráfico */
-  --chart-1: #8b6f47;
-  --chart-2: #4d2e19;
-  --chart-3: #3d1f10;
-  --chart-4: #f5e6d3;
-  --chart-5: #a89a8a;
-
-  /* Espaçamento */
-  --radius: 0.75rem;
-
-  /* Background e Foreground */
-  --background: #faf8f5; /* Creme muito claro */
-  --foreground: #2d1810; /* Marrom muito escuro */
-  --card: #ffffff;
-  --card-foreground: #2d1810;
-  --popover: #ffffff;
-  --popover-foreground: #2d1810;
-
-  /* Secundário */
-  --secondary: #f5e6d3; /* Creme claro */
-  --secondary-foreground: #2d1810;
-  --muted: #d4c4b0;
-  --muted-foreground: #6b4423;
-  --accent: #9b7653; /* Marrom café médio - mais sofisticado */
-  --accent-foreground: #ffffff;
-
-  /* Destrutivo */
-  --destructive: #c85a3a;
-  --destructive-foreground: #ffffff;
-
-  /* Borders e Inputs */
-  --border: #e8dcc8;
-  --input: #e8dcc8;
-  --ring: #9b7653;
-
-  /* Sidebar */
-  --sidebar: #ffffff;
-  --sidebar-foreground: #2d1810;
-  --sidebar-accent: #9b7653;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #e8dcc8;
-  --sidebar-ring: #9b7653;
-}
-
-.dark {
-  /* Modo escuro: Marrom café como fundo */
-  --primary: #9b7653;
-  --primary-foreground: #f9f6f0;
-  --sidebar-primary: #9b7653;
-  --sidebar-primary-foreground: #f9f6f0;
-  --background: #4d2e19; /* Marrom café escuro */
-  --foreground: #f9f6f0;
-  --card: #5d3a1a;
-  --card-foreground: #f9f6f0;
-  --popover: #5d3a1a;
-  --popover-foreground: #f9f6f0;
-  --secondary: #6b4423;
-  --secondary-foreground: #f9f6f0;
-  --muted: #7a5433;
-  --muted-foreground: #d4c4b0;
-  --accent: #9b7653;
-  --accent-foreground: #f9f6f0;
-  --destructive: #ff8a65;
-  --destructive-foreground: #3d1f10;
-  --border: #7a5433;
-  --input: #7a5433;
-  --ring: #9b7653;
-  --chart-1: #8b6f47;
-  --chart-2: #a89a8a;
-  --chart-3: #6b4423;
-  --chart-4: #4d2e19;
-  --chart-5: #3d1f10;
-  --sidebar: #5d3a1a;
-  --sidebar-foreground: #f9f6f0;
-  --sidebar-accent: #9b7653;
-  --sidebar-accent-foreground: #f9f6f0;
-  --sidebar-border: #7a5433;
-  --sidebar-ring: #9b7653;
+  --terracotta-rgb: 191 97 43;
+  --green-rgb: 39 67 56;
+  --brown-rgb: 95 74 61;
+  --cream-rgb: 247 239 226;
+  --gold-rgb: 215 155 76;
+  --background: rgb(var(--cream-rgb));
+  --foreground: rgb(var(--green-rgb));
+  --primary: rgb(var(--terracotta-rgb));
+  --primary-foreground: rgb(255 250 242);
+  --secondary: rgb(var(--cream-rgb) / 0.72);
+  --secondary-foreground: rgb(var(--green-rgb));
+  --border: rgb(var(--brown-rgb) / 0.18);
+  --ring: rgb(var(--terracotta-rgb));
 }
 
 @layer base {
@@ -134,9 +33,15 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
-    font-family: "Lato", sans-serif;
+    margin: 0;
+    font-family: "Lato", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
   h1,
@@ -145,161 +50,138 @@
   h4,
   h5,
   h6 {
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  h1 {
-    @apply text-5xl md:text-6xl lg:text-7xl;
-  }
-
-  h2 {
-    @apply text-4xl md:text-5xl;
-  }
-
-  h3 {
-    @apply text-3xl md:text-4xl;
-  }
-
-  h4 {
-    @apply text-2xl md:text-3xl;
-  }
-
-  p {
-    @apply text-lg leading-relaxed;
-    font-weight: 300;
+    font-family: "Playfair Display", Georgia, serif;
+    letter-spacing: -0.025em;
   }
 
   button:not(:disabled),
-  [role="button"]:not([aria-disabled="true"]),
-  [type="button"]:not(:disabled),
-  [type="submit"]:not(:disabled),
-  [type="reset"]:not(:disabled),
   a[href],
-  select:not(:disabled),
-  input[type="checkbox"]:not(:disabled),
-  input[type="radio"]:not(:disabled) {
-    @apply cursor-pointer;
+  input:not(:disabled),
+  textarea:not(:disabled) {
+    cursor: pointer;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid rgb(var(--terracotta-rgb));
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: rgb(var(--terracotta-rgb));
+    color: rgb(255 250 240);
   }
 }
 
-/* Scroll Smooth */
-html {
-  scroll-behavior: smooth;
+.section-space {
+  padding-block: clamp(5.5rem, 9vw, 8rem);
 }
 
-/* Background decorativo aplicado da seção Nossa Essência até Visite-nos */
-.site-textured-background {
+.site-background {
   position: relative;
   isolation: isolate;
-  background-image:
-    radial-gradient(circle at 18% 10%, rgba(180, 108, 24, 0.14), transparent 28rem),
-    radial-gradient(circle at 82% 42%, rgba(180, 108, 24, 0.1), transparent 30rem),
-    linear-gradient(180deg, rgba(33, 31, 27, 0.88), rgba(24, 22, 20, 0.91)),
-    url("/images/background-home.webp");
-  background-position: center top, center center, center center, center top;
-  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
-  background-size: 100% 100%, 100% 100%, 100% 100%, 760px auto;
 }
 
-.site-textured-background::before {
+.site-background::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: rgb(var(--cream-rgb));
+  background-image: url("/images/site-background-soft.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0.82;
+  pointer-events: none;
+}
+
+.botanical-section {
+  position: relative;
+  color: rgb(var(--brown-rgb));
+}
+
+.menu-botanical-panel {
+  position: relative;
+  isolation: isolate;
+}
+
+.menu-botanical-panel::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.22), transparent 25%, transparent 75%, rgba(0, 0, 0, 0.22)),
-    rgba(0, 0, 0, 0.16);
+  background-image: url("/images/background-botanico-creme.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.58;
   pointer-events: none;
 }
 
-.site-textured-background section {
-  position: relative;
+.hero-primary-button {
+  background: rgb(var(--terracotta-rgb));
+  color: #fff !important;
+  box-shadow: 0 14px 35px rgb(var(--terracotta-rgb) / 0.28);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
 }
 
-.site-textured-background section + section::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  height: 1px;
-  width: min(1120px, calc(100% - 3rem));
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, transparent, rgba(217, 119, 6, 0.22), transparent);
+.hero-primary-button:hover {
+  background: rgb(var(--terracotta-rgb) / 0.92);
+  transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-  .site-textured-background {
-    background-size: 100% 100%, 100% 100%, 100% 100%, 560px auto;
-  }
+.menu-card {
+  box-shadow: 0 16px 45px rgb(var(--brown-rgb) / 0.12);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* Scrollbar Customizada */
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 55px rgb(var(--brown-rgb) / 0.18);
+}
+
+.review-card {
+  box-shadow: 0 15px 40px rgb(var(--brown-rgb) / 0.1);
+}
+
+.nav-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #e8dcc8;
+  background: rgb(var(--cream-rgb) / 0.9);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #9b7653;
-  border-radius: 4px;
+  background: rgb(var(--green-rgb) / 0.6);
+  border: 2px solid rgb(var(--cream-rgb) / 0.9);
+  border-radius: 999px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #5d3a1a;
-}
-
-/* Links */
-a {
-  color: #9b7653;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #5d3a1a;
-}
-
-/* Focus States */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid #9b7653;
-  outline-offset: 2px;
-}
-
-/* Inputs */
-input,
-textarea,
-select {
-  font-family: "Lato", sans-serif;
-  border-color: #e8dcc8;
-  transition: border-color 0.3s ease;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: #9b7653;
-  outline: none;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
+@media (max-width: 640px) {
+  .hero-section,
+  .hero-section > div:nth-of-type(3) {
+    min-height: 700px;
   }
 
-  50% {
-    transform: translateY(-12px);
+  .menu-botanical-panel::before {
+    background-size: cover;
   }
-}
 
-.floating-cup {
-  animation: float 3s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -313,9 +195,5 @@ select:focus {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-
-  .floating-cup {
-    animation: none;
   }
 }
