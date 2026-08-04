@@ -7,6 +7,7 @@ export type MenuItem = {
   price: string;
   priceCents: number;
   image: string;
+  imageClassName?: string;
   category: MenuCategory;
 };
 
@@ -19,6 +20,7 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
       price: "R$ 8,00",
       priceCents: 800,
       image: "/images/menu/espresso-da-casa.png",
+      imageClassName: "object-[center_46%]",
       category: "bebidas",
     },
     {
@@ -28,6 +30,7 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
       price: "R$ 12,00",
       priceCents: 1200,
       image: "/images/menu/cappuccino-tradicional.png",
+      imageClassName: "object-[center_38%]",
       category: "bebidas",
     },
     {
@@ -37,6 +40,7 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
       price: "R$ 10,00",
       priceCents: 1000,
       image: "/images/menu/cafe-com-leite.png",
+      imageClassName: "object-[center_52%]",
       category: "bebidas",
     },
     {
@@ -46,6 +50,7 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
       price: "R$ 11,00",
       priceCents: 1100,
       image: "/images/menu/macchiato-classico.png",
+      imageClassName: "object-[center_30%]",
       category: "bebidas",
     },
     {
@@ -55,6 +60,7 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
       price: "R$ 7,00",
       priceCents: 700,
       image: "/images/menu/cafe-coado.png",
+      imageClassName: "object-[center_58%]",
       category: "bebidas",
     },
     {
@@ -64,6 +70,7 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
       price: "R$ 10,00",
       priceCents: 1000,
       image: "/images/menu/cafe-gelado.png",
+      imageClassName: "object-[center_42%]",
       category: "bebidas",
     },
   ],
@@ -75,6 +82,7 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
       price: "R$ 6,00",
       priceCents: 600,
       image: "/images/menu/pao-de-queijo.png",
+      imageClassName: "object-[center_55%]",
       category: "quitandas",
     },
     {
@@ -84,6 +92,7 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
       price: "R$ 8,00",
       priceCents: 800,
       image: "/images/menu/bolo-de-milho.png",
+      imageClassName: "object-[center_44%]",
       category: "quitandas",
     },
     {
@@ -93,6 +102,7 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
       price: "R$ 7,00",
       priceCents: 700,
       image: "/images/menu/broa-de-milho.png",
+      imageClassName: "object-[center_50%]",
       category: "quitandas",
     },
     {
@@ -102,6 +112,7 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
       price: "R$ 10,00",
       priceCents: 1000,
       image: "/images/menu/bolo-de-chocolate.png",
+      imageClassName: "object-[center_40%]",
       category: "quitandas",
     },
     {
@@ -111,6 +122,7 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
       price: "R$ 5,00",
       priceCents: 500,
       image: "/images/menu/biscoito-de-polvilho.png",
+      imageClassName: "object-[center_47%]",
       category: "quitandas",
     },
     {
@@ -120,6 +132,7 @@ export const menuItems: Record<MenuCategory, MenuItem[]> = {
       price: "R$ 9,00",
       priceCents: 900,
       image: "/images/menu/croissant.png",
+      imageClassName: "object-[center_36%]",
       category: "quitandas",
     },
   ],
