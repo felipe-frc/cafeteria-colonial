@@ -17,4 +17,17 @@ describe("createWhatsappOrderUrl", () => {
     expect(decodedUrl).toContain("Retirada no local");
     expect(url).toContain("https://wa.me/553438212000?text=");
   });
+
+  it("inclui os dados de retirada informados pelo cliente", () => {
+    const url = createWhatsappOrderUrl(
+      [{ ...menuItems.quitandas[0], quantity: 1 }],
+      menuItems.quitandas[0].priceCents,
+      { customerName: "Felipe", pickupTime: "16h30", notes: "Embalar separado" }
+    );
+
+    const decodedUrl = decodeURIComponent(url);
+    expect(decodedUrl).toContain("Nome: Felipe");
+    expect(decodedUrl).toContain("Horário de retirada: 16h30");
+    expect(decodedUrl).toContain("Observações: Embalar separado");
+  });
 });

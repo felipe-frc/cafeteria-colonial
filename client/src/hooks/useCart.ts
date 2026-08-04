@@ -6,7 +6,10 @@ export type CartItem = MenuItem & {
 };
 
 const CART_STORAGE_KEY = "cafeteria-raizes:cart";
-const VALID_CATEGORIES = new Set<MenuItem["category"]>(["bebidas", "quitandas"]);
+const VALID_CATEGORIES = new Set<MenuItem["category"]>([
+  "bebidas",
+  "quitandas",
+]);
 
 function isValidCartItem(value: unknown): value is CartItem {
   if (typeof value !== "object" || value === null) {
@@ -59,37 +62,43 @@ export function useCart() {
   }, [items]);
 
   function addItem(item: MenuItem) {
-    setItems((currentItems) => {
-      const existingItem = currentItems.find((cartItem) => cartItem.id === item.id);
+    setItems(currentItems => {
+      const existingItem = currentItems.find(
+        cartItem => cartItem.id === item.id
+      );
 
       if (!existingItem) {
         return [...currentItems, { ...item, quantity: 1 }];
       }
 
-      return currentItems.map((cartItem) =>
-        cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+      return currentItems.map(cartItem =>
+        cartItem.id === item.id
+          ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          : cartItem
       );
     });
   }
 
   function increaseQuantity(itemId: string) {
-    setItems((currentItems) =>
-      currentItems.map((item) =>
+    setItems(currentItems =>
+      currentItems.map(item =>
         item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
       )
     );
   }
 
   function decreaseQuantity(itemId: string) {
-    setItems((currentItems) =>
+    setItems(currentItems =>
       currentItems
-        .map((item) => (item.id === itemId ? { ...item, quantity: item.quantity - 1 } : item))
-        .filter((item) => item.quantity > 0)
+        .map(item =>
+          item.id === itemId ? { ...item, quantity: item.quantity - 1 } : item
+        )
+        .filter(item => item.quantity > 0)
     );
   }
 
   function removeItem(itemId: string) {
-    setItems((currentItems) => currentItems.filter((item) => item.id !== itemId));
+    setItems(currentItems => currentItems.filter(item => item.id !== itemId));
   }
 
   function clearCart() {
@@ -102,7 +111,8 @@ export function useCart() {
   );
 
   const totalPrice = useMemo(
-    () => items.reduce((total, item) => total + item.priceCents * item.quantity, 0),
+    () =>
+      items.reduce((total, item) => total + item.priceCents * item.quantity, 0),
     [items]
   );
 

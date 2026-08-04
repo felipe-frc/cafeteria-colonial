@@ -16,7 +16,9 @@ describe("useCart", () => {
     });
 
     expect(result.current.totalItems).toBe(1);
-    expect(JSON.parse(window.localStorage.getItem("cafeteria-raizes:cart") ?? "[]")).toHaveLength(1);
+    expect(
+      JSON.parse(window.localStorage.getItem("cafeteria-raizes:cart") ?? "[]")
+    ).toHaveLength(1);
   });
 
   it("hidrata itens existentes do localStorage", () => {
@@ -28,7 +30,9 @@ describe("useCart", () => {
     const { result } = renderHook(() => useCart());
 
     expect(result.current.totalItems).toBe(2);
-    expect(result.current.totalPrice).toBe(menuItems.quitandas[0].priceCents * 2);
+    expect(result.current.totalPrice).toBe(
+      menuItems.quitandas[0].priceCents * 2
+    );
   });
 
   it("ignora itens inválidos persistidos no localStorage", () => {
@@ -43,7 +47,9 @@ describe("useCart", () => {
 
     const { result } = renderHook(() => useCart());
 
-    expect(result.current.items).toEqual([{ ...menuItems.bebidas[0], quantity: 1 }]);
+    expect(result.current.items).toEqual([
+      { ...menuItems.bebidas[0], quantity: 1 },
+    ]);
     expect(result.current.totalItems).toBe(1);
   });
 });

@@ -25,7 +25,11 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error(`Unexpected render error in ${contactInfo.businessName}:`, error, errorInfo);
+    console.error(
+      `Unexpected render error in ${contactInfo.businessName}:`,
+      error,
+      errorInfo
+    );
   }
 
   render() {
@@ -33,13 +37,18 @@ class ErrorBoundary extends Component<Props, State> {
       return (
         <div className="flex min-h-screen items-center justify-center bg-background p-8">
           <div className="flex w-full max-w-2xl flex-col items-center p-8">
-            <AlertTriangle size={48} className="mb-6 flex-shrink-0 text-destructive" />
+            <AlertTriangle
+              size={48}
+              className="mb-6 flex-shrink-0 text-destructive"
+            />
 
-            <h2 className="mb-4 text-center text-xl">Algo saiu do esperado por aqui.</h2>
+            <h2 className="mb-4 text-center text-xl">
+              Algo saiu do esperado por aqui.
+            </h2>
 
             <p className="mb-6 max-w-xl text-center text-sm text-muted-foreground">
-              Recarregue a pagina para tentar novamente. Se o problema continuar, revise o
-              console e o fluxo que estava em uso.
+              Recarregue a pagina para tentar novamente. Se o problema
+              continuar, revise o console e o fluxo que estava em uso.
             </p>
 
             {isDev && this.state.error?.stack && (

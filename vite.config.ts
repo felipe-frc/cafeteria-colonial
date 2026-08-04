@@ -1,20 +1,23 @@
+/// <reference types="vitest/config" />
+
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { defineConfig } from "vitest/config";
+import { defineConfig } from "vite";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const clientRoot = path.resolve(__dirname, "client");
 
 export default defineConfig({
-  root: path.resolve(__dirname, "client"),
+  root: clientRoot,
 
   plugins: [react(), tailwindcss()],
 
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "client", "src"),
+      "@": path.resolve(clientRoot, "src"),
     },
   },
 
@@ -27,12 +30,20 @@ export default defineConfig({
     host: true,
     port: 3000,
     strictPort: false,
+    fs: {
+      allow: [__dirname, clientRoot],
+    },
+  },
+
+  optimizeDeps: {
+    noDiscovery: true,
+    include: [],
   },
 
   test: {
     globals: true,
     environment: "jsdom",
-    setupFiles: "./src/test/setup.ts",
+    setupFiles: path.resolve(clientRoot, "src", "test", "setup.ts"),
     css: true,
   },
 });

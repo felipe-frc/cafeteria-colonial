@@ -20,7 +20,9 @@ describe("CartDrawer", () => {
     );
 
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: /fechar carrinho/i })).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: /fechar carrinho/i })
+    ).not.toBeInTheDocument();
   });
 
   it("fecha ao pressionar Escape", async () => {
@@ -61,8 +63,12 @@ describe("CartDrawer", () => {
       />
     );
 
-    const closeButton = screen.getByRole("button", { name: /fechar carrinho/i });
-    const clearButton = screen.getByRole("button", { name: /limpar carrinho/i });
+    const closeButton = screen.getByRole("button", {
+      name: /fechar carrinho/i,
+    });
+    const clearButton = screen.getByRole("button", {
+      name: /limpar carrinho/i,
+    });
 
     expect(closeButton).toHaveFocus();
 

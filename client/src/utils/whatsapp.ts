@@ -2,9 +2,19 @@ import { contactInfo } from "@/data/contact";
 import type { CartItem } from "@/hooks/useCart";
 import { formatCurrency } from "./currency";
 
-export function createWhatsappOrderUrl(items: CartItem[], totalPrice: number) {
+export type OrderDetails = {
+  customerName?: string;
+  pickupTime?: string;
+  notes?: string;
+};
+
+export function createWhatsappOrderUrl(
+  items: CartItem[],
+  totalPrice: number,
+  details: OrderDetails = {}
+) {
   const orderItems = items
-    .map((item) => {
+    .map(item => {
       const subtotal = formatCurrency(item.priceCents * item.quantity);
       return `• ${item.quantity}x ${item.title} — ${subtotal}`;
     })
@@ -19,9 +29,9 @@ export function createWhatsappOrderUrl(items: CartItem[], totalPrice: number) {
     `Total: ${formatCurrency(totalPrice)}`,
     `Tipo de pedido: ${contactInfo.orderType}`,
     "",
-    "Nome:",
-    "Horário de retirada:",
-    "Observações:",
+    `Nome: ${details.customerName?.trim() || "A informar"}`,
+    `Horário de retirada: ${details.pickupTime?.trim() || "A combinar"}`,
+    `Observações: ${details.notes?.trim() || "Nenhuma"}`,
   ].join("\n");
 
   return `https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent(message)}`;
