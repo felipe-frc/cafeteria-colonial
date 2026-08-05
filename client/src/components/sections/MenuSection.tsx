@@ -27,11 +27,11 @@ export function MenuSection({ onAddToCart, onCartOpen }: MenuSectionProps) {
   return (
     <section id="menu" className="botanical-section section-space scroll-mt-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="menu-botanical-panel overflow-hidden rounded-[2.4rem] border border-[rgb(var(--brown-rgb)/0.2)] bg-[rgb(var(--cream-rgb)/0.84)] px-6 py-8 text-[rgb(var(--brown-rgb))] shadow-[0_35px_90px_rgb(var(--brown-rgb)/0.12)] backdrop-blur-[2px] sm:px-8 lg:px-10">
+        <div className="menu-botanical-panel overflow-hidden rounded-[2.4rem] border border-[rgb(var(--brown-rgb)/0.16)] bg-[rgb(var(--cream-rgb)/0.84)] px-7 py-8 text-[rgb(var(--brown-rgb))] shadow-[0_30px_80px_rgb(var(--brown-rgb)/0.1)] backdrop-blur-[2px] sm:px-9 lg:px-12">
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
             <div className="max-w-2xl">
               <SectionTitle eyebrow="Cardápio artesanal" title="Nosso Menu" centered={false} />
-              <p className="mt-5 max-w-xl text-base leading-7 text-[rgb(var(--brown-rgb))]">
+              <p className="section-body-text mt-5 max-w-xl text-[rgb(var(--brown-rgb))]">
                 Aroma fresco, preparos feitos na hora e quitandas que transformam o
                 pedido em pausa boa. Escolha seu favorito e monte a sua combinação.
               </p>
@@ -63,7 +63,7 @@ export function MenuSection({ onAddToCart, onCartOpen }: MenuSectionProps) {
               return (
                 <article
                   key={item.id}
-                  className="menu-card group overflow-hidden rounded-[1.7rem] border border-[rgb(var(--brown-rgb)/0.14)] bg-[rgb(var(--cream-rgb)/0.96)] text-[rgb(var(--brown-rgb))]"
+                  className="menu-card group flex h-full flex-col overflow-hidden rounded-[1.7rem] border border-[rgb(var(--brown-rgb)/0.14)] bg-[rgb(var(--cream-rgb)/0.96)] text-[rgb(var(--brown-rgb))]"
                 >
                   <div className="relative overflow-hidden">
                     <img
@@ -79,19 +79,25 @@ export function MenuSection({ onAddToCart, onCartOpen }: MenuSectionProps) {
                     </span>
                   </div>
 
-                  <div className="p-6">
+                  <div className="flex flex-1 flex-col p-6">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <h3 className="text-xl font-semibold text-[rgb(var(--green-rgb))]">{item.title}</h3>
-                        <p className="mt-2 text-sm leading-6 text-[rgb(var(--brown-rgb))]">{item.desc}</p>
+                        <h3 className="text-[1.15rem] font-semibold leading-7 text-[rgb(var(--green-rgb))]">
+                          {item.title}
+                        </h3>
+                        <p className="section-support-text mt-2 text-[rgb(var(--brown-rgb)/0.9)]">
+                          {item.desc}
+                        </p>
                       </div>
-                      <strong className="shrink-0 text-lg text-[rgb(var(--terracotta-rgb))]">{item.price}</strong>
+                      <strong className="shrink-0 pt-0.5 text-[1.05rem] text-[rgb(var(--terracotta-rgb))]">
+                        {item.price}
+                      </strong>
                     </div>
 
                     <button
                       type="button"
                       onClick={() => handleAddItem(item)}
-                      className={`nav-label mt-6 flex h-12 w-full items-center justify-center gap-2 rounded-full shadow-[0_10px_22px_rgb(var(--green-rgb)/0.14)] transition active:scale-[0.985] ${
+                      className={`nav-label mt-6 flex h-[3.25rem] w-full items-center justify-center gap-2 rounded-full shadow-[0_10px_22px_rgb(var(--green-rgb)/0.14)] transition active:scale-[0.985] sm:mt-auto ${
                         wasAdded
                           ? "bg-[rgb(var(--green-rgb))] text-white"
                           : "bg-[rgb(var(--green-rgb))] text-white hover:-translate-y-0.5 hover:bg-[rgb(var(--terracotta-rgb))] hover:shadow-[0_14px_26px_rgb(var(--terracotta-rgb)/0.2)]"
