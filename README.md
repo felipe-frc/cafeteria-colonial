@@ -8,7 +8,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38B2AC?logo=tailwindcss&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Landing page institucional para uma cafeteria fictícia, com menu interativo, carrinho persistente e envio de pedido por WhatsApp.
+Landing page institucional para uma cafeteria fictícia, com cardápio interativo, carrinho persistente e envio de pedido por WhatsApp.
 
 ## Visão geral
 
@@ -27,22 +27,23 @@ O projeto foi desenvolvido com foco em:
 
 ## Funcionalidades
 
-- Hero section com proposta de valor e CTA
-- Navegação por seções com header fixo
-- Menu dividido entre bebidas e quitandas
-- Carrinho lateral com controle de quantidade
-- Persistência do carrinho com `localStorage`
-- Geração de pedido formatado para WhatsApp
-- Seção de contato com links acionáveis
-- Depoimentos com rotação automática
-- Layout responsivo e com cuidados básicos de acessibilidade
+- hero institucional com identidade visual própria
+- navegação por âncoras com header fixo
+- seção de apresentação da marca com vídeo
+- cardápio dividido entre bebidas e quitandas
+- carrinho lateral com controle de quantidade
+- persistência do carrinho com `localStorage`
+- geração de pedido formatado para WhatsApp
+- seção de contato com links acionáveis e mapa incorporado
+- depoimentos com rotação automática
+- layout responsivo e cuidados básicos de acessibilidade
 
 ## Stack
 
 - React 19
 - TypeScript
 - Vite
-- Tailwind CSS
+- Tailwind CSS 4
 - Lucide React
 - Vitest
 - Testing Library
@@ -54,14 +55,24 @@ O projeto foi desenvolvido com foco em:
 ```txt
 client/
   public/
+    images/
+      backgrounds/
+      branding/
+      hero/
+      menu/
+    video/
   src/
     components/
+      cart/
+      layout/
+      sections/
+      ui/
     data/
     hooks/
-    lib/
     pages/
     utils/
 .github/
+  workflows/
 ```
 
 ## Como executar
@@ -85,7 +96,7 @@ npm install
 npm run dev
 ```
 
-Aplicação disponível em `http://localhost:3000`.
+Aplicação disponível em `http://localhost:5173`.
 
 ### Qualidade
 
@@ -100,24 +111,25 @@ npm run build
 
 O repositório possui:
 
-- testes unitários e de comportamento com Vitest
 - lint com ESLint
-- validação de TypeScript
-- build de produção
-- pipeline de CI no GitHub Actions
+- validação de tipos com TypeScript
+- testes unitários e de comportamento com Vitest
+- build de produção com Vite
+- pipeline de CI no GitHub Actions para `push` e `pull request` na branch `main`
 
 ## Decisões técnicas
 
-- O projeto foi mantido como front-end estático para simplificar deploy e foco em experiência.
-- O carrinho funciona no cliente e o pedido é enviado via WhatsApp, o que aproxima o fluxo de pequenos negócios reais.
-- Os dados do menu, contato e depoimentos ficam separados da UI para facilitar manutenção.
+- O projeto foi mantido como front-end estático para simplificar o deploy e concentrar o esforço em experiência visual e usabilidade.
+- O carrinho funciona integralmente no cliente e o pedido é finalizado via WhatsApp, aproximando o fluxo da realidade de pequenos negócios.
+- Os dados de cardápio, contato e depoimentos ficam separados da interface para facilitar manutenção e evolução do conteúdo.
+- Os assets foram organizados por função (`branding`, `hero`, `backgrounds`, `menu`) para evitar duplicidade e melhorar a arquitetura do repositório.
 
 ## Próximos passos
 
-- adicionar testes end-to-end para o fluxo de pedido
-- expandir testes de acessibilidade e interação
-- medir performance com Lighthouse e documentar resultados
-- evoluir o conteúdo visual com screenshots e GIF do fluxo principal
+- revisar responsividade com inspeção visual detalhada em mais resoluções
+- expandir testes para fluxos mais completos de navegação e pedido
+- adicionar capturas de tela do projeto no README
+- documentar decisões de UI e acessibilidade de forma mais aprofundada
 
 ## Licença
 
