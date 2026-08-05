@@ -27,7 +27,7 @@ export function AboutSection() {
           <div className="relative">
             <div className="overflow-hidden rounded-[2.25rem] border border-[rgb(var(--gold-rgb)/0.55)] bg-[rgb(var(--cream-rgb)/0.55)] p-3 shadow-[0_28px_70px_rgb(var(--brown-rgb)/0.1)] backdrop-blur-sm">
               <video
-                src="/video/video-sessão.mp4"
+                src="/video/nossa-essencia.mp4"
                 className="aspect-[4/4.45] w-full rounded-[1.8rem] object-cover"
                 autoPlay
                 muted

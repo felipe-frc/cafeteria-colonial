@@ -30,7 +30,7 @@ export function Header({ cartItemsCount, onCartOpen }: HeaderProps) {
             aria-label={`${contactInfo.businessName}, início`}
           >
             <img
-              src="/images/logo-cafeteria.png"
+              src="/images/branding/logo-raizes.webp"
               alt=""
               className="size-[6.5rem] scale-[1.08] object-contain sm:size-[7rem]"
             />

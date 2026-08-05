@@ -107,7 +107,7 @@ export function CartDrawer({
   return (
     <>
       <div
-        className="fixed inset-0 z-[60] bg-[rgba(32,20,14,0.42)] backdrop-blur-[5px] transition-opacity duration-300 opacity-100"
+        className="fixed inset-0 z-[60] bg-[rgba(32,20,14,0.42)] opacity-100 backdrop-blur-[5px] transition-opacity duration-300"
         aria-hidden="true"
         onClick={onClose}
       />
@@ -147,8 +147,7 @@ export function CartDrawer({
               <ShoppingBag className="mb-5 size-12 text-[rgb(var(--terracotta-rgb))]" />
               <h3 className="text-2xl font-bold text-[rgb(var(--green-rgb))]">Carrinho vazio</h3>
               <p className="mt-3 text-sm leading-relaxed text-[rgb(var(--brown-rgb))]">
-                Escolha uma bebida ou quitanda no menu para montar seu pedido de
-                retirada.
+                Escolha uma bebida ou quitanda no menu para montar seu pedido de retirada.
               </p>
               <Button
                 className="mt-6 rounded-full bg-[rgb(var(--terracotta-rgb))] px-6 text-white hover:bg-[rgb(var(--terracotta-rgb)/0.92)]"
@@ -280,7 +279,7 @@ export function CartDrawer({
             {hasItems ? (
               <Button
                 asChild
-                className="h-13 rounded-full bg-[rgb(var(--green-rgb))] text-white shadow-[0_12px_28px_rgb(var(--green-rgb)/0.18)] hover:bg-[rgb(var(--terracotta-rgb))]"
+                className="h-[3.25rem] rounded-full bg-[rgb(var(--green-rgb))] text-white shadow-[0_12px_28px_rgb(var(--green-rgb)/0.18)] hover:bg-[rgb(var(--terracotta-rgb))]"
               >
                 <a href={whatsappUrl} target="_blank" rel="noreferrer">
                   <Send className="size-4" /> Finalizar pelo WhatsApp

@@ -5,7 +5,7 @@ export function HeroSection() {
     <section id="inicio" className="hero-section relative isolate min-h-[108svh] overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <img
-          src="/images/cafeteria-hero-logo-bg.png"
+          src="/images/hero/hero-cafeteria-raizes.webp"
           alt=""
           aria-hidden="true"
           className="absolute left-1/2 top-1/2 h-full w-full max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"

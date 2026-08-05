@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import { contactInfo } from "@/data/contact";
 import { AlertTriangle, RotateCcw } from "lucide-react";
 import { Component, type ErrorInfo, type ReactNode } from "react";
@@ -35,25 +34,25 @@ class ErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="flex min-h-screen items-center justify-center bg-background p-8">
+        <div className="flex min-h-screen items-center justify-center bg-[rgb(var(--cream-rgb))] p-8 text-[rgb(var(--brown-rgb))]">
           <div className="flex w-full max-w-2xl flex-col items-center p-8">
             <AlertTriangle
               size={48}
-              className="mb-6 flex-shrink-0 text-destructive"
+              className="mb-6 flex-shrink-0 text-[rgb(var(--terracotta-rgb))]"
             />
 
-            <h2 className="mb-4 text-center text-xl">
+            <h2 className="mb-4 text-center text-xl font-semibold text-[rgb(var(--green-rgb))]">
               Algo saiu do esperado por aqui.
             </h2>
 
-            <p className="mb-6 max-w-xl text-center text-sm text-muted-foreground">
-              Recarregue a pagina para tentar novamente. Se o problema
-              continuar, revise o console e o fluxo que estava em uso.
+            <p className="mb-6 max-w-xl text-center text-sm leading-6 text-[rgb(var(--brown-rgb)/0.84)]">
+              Recarregue a página para tentar novamente. Se o problema continuar,
+              revise o console e o fluxo que estava em uso.
             </p>
 
             {isDev && this.state.error?.stack && (
-              <div className="mb-6 w-full overflow-auto rounded bg-muted p-4">
-                <pre className="whitespace-break-spaces text-sm text-muted-foreground">
+              <div className="mb-6 w-full overflow-auto rounded-2xl border border-[rgb(var(--brown-rgb)/0.12)] bg-[rgb(var(--cream-rgb)/0.72)] p-4">
+                <pre className="whitespace-break-spaces text-sm text-[rgb(var(--brown-rgb)/0.82)]">
                   {this.state.error.stack}
                 </pre>
               </div>
@@ -61,14 +60,10 @@ class ErrorBoundary extends Component<Props, State> {
 
             <button
               onClick={() => window.location.reload()}
-              className={cn(
-                "flex items-center gap-2 rounded-lg px-4 py-2",
-                "bg-primary text-primary-foreground",
-                "cursor-pointer hover:opacity-90"
-              )}
+              className="flex cursor-pointer items-center gap-2 rounded-full bg-[rgb(var(--terracotta-rgb))] px-5 py-3 text-white transition hover:bg-[rgb(var(--terracotta-rgb)/0.92)]"
             >
               <RotateCcw size={16} />
-              Recarregar pagina
+              Recarregar página
             </button>
           </div>
         </div>
