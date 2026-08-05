@@ -38,13 +38,20 @@ export function AboutSection() {
               </video>
             </div>
 
-            <div className="absolute bottom-5 right-5 max-w-[16rem] rounded-[1.5rem] border border-[rgb(var(--brown-rgb)/0.18)] bg-[rgb(var(--cream-rgb)/0.92)] px-5 py-4 shadow-[0_18px_40px_rgb(var(--brown-rgb)/0.14)] backdrop-blur-sm">
-              <span className="block text-[11px] font-bold uppercase tracking-[0.22em] text-[rgb(var(--terracotta-rgb))]">
-                Raízes da casa
-              </span>
-              <strong className="mt-2 block font-serif text-2xl leading-tight text-[rgb(var(--green-rgb))]">
-                Sabor e tradição desde 1989
-              </strong>
+            <div className="about-floating-badge absolute -bottom-5 left-6 z-10 max-w-[15.5rem] rounded-full border border-[rgb(var(--gold-rgb)/0.3)] bg-[rgb(var(--cream-rgb)/0.96)] px-4 py-3 shadow-[0_18px_36px_rgb(var(--brown-rgb)/0.12)] backdrop-blur-sm">
+              <div className="flex items-center gap-3">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[rgb(var(--terracotta-rgb)/0.12)] text-[rgb(var(--terracotta-rgb))]">
+                  <Coffee className="size-4" />
+                </span>
+                <div>
+                  <span className="block text-[10px] font-bold uppercase tracking-[0.22em] text-[rgb(var(--terracotta-rgb))]">
+                    Raízes da casa
+                  </span>
+                  <strong className="mt-1 block font-serif text-[1.1rem] leading-tight text-[rgb(var(--green-rgb))]">
+                    Sabor e tradição desde 1989
+                  </strong>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -75,7 +82,9 @@ export function AboutSection() {
                   <span className="flex size-10 items-center justify-center rounded-full bg-[rgb(var(--terracotta-rgb)/0.1)] text-[rgb(var(--terracotta-rgb))]">
                     <Icon className="size-4" />
                   </span>
-                  <h3 className="mt-3 text-[15px] font-semibold text-[rgb(var(--green-rgb))]">{title}</h3>
+                  <h3 className="mt-3 text-[15px] font-semibold text-[rgb(var(--green-rgb))]">
+                    {title}
+                  </h3>
                   <p className="mt-1.5 text-sm leading-5 text-[rgb(var(--brown-rgb))]">{text}</p>
                 </article>
               ))}
