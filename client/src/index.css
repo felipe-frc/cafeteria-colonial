@@ -90,7 +90,7 @@
   inset: 0;
   z-index: -1;
   background-color: rgb(var(--cream-rgb));
-  background-image: url("/images/site-background-soft.png");
+  background-image: url("/images/backgrounds/background-site-creme.webp");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -113,7 +113,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: url("/images/background-botanico-creme.png");
+  background-image: url("/images/backgrounds/background-menu-botanico-creme.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
