@@ -76,7 +76,7 @@
 }
 
 .section-space {
-  padding-block: clamp(5.5rem, 9vw, 8rem);
+  padding-block: clamp(4.2rem, 7vw, 6.2rem);
 }
 
 .site-background {
@@ -151,16 +151,26 @@
   box-shadow: 0 15px 40px rgb(var(--brown-rgb) / 0.1);
 }
 
+.section-body-text {
+  font-size: clamp(0.95rem, 0.34vw + 0.9rem, 1.08rem);
+  line-height: 1.85;
+}
+
+.section-support-text {
+  font-size: clamp(0.9rem, 0.22vw + 0.86rem, 0.98rem);
+  line-height: 1.65;
+}
+
 .about-floating-badge {
   transform-origin: left bottom;
   animation: about-badge-float 4.4s ease-in-out infinite;
 }
 
 .nav-label {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
 }
 
 @keyframes about-badge-float {
@@ -201,10 +211,18 @@
     min-height: 700px;
   }
 
+  .section-space {
+    padding-block: clamp(3.6rem, 10vw, 4.8rem);
+  }
+
+  .nav-label {
+    font-size: 0.8125rem;
+    letter-spacing: 0.12em;
+  }
+
   .menu-botanical-panel::before {
     background-size: cover;
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
